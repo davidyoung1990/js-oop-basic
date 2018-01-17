@@ -1,0 +1,98 @@
+% 导入包
+
+
+% 处理图文混排
+% \usepackage{wrapfig}
+
+% 导入色彩包
+\usepackage{color}
+% 定义一些颜色
+
+
+% 图形包
+\usepackage{graphicx}   
+% 定义导入图片命令
+\newcommand{\jimg}[1]{\includegraphics[width=\textwidth]{#1}}
+
+
+% 生成目录标签
+\usepackage[unicode, linkbordercolor={1 1 1}]{hyperref}   
+
+
+% 选择字体包(需要使用 xelatex 来编译)
+% \usepackage{fontspec}
+% \usepackage[T1]{fontenc}
+
+
+% 导入代码包
+\usepackage{listings}
+% 修改代码引用名
+\renewcommand*{\lstlistingname}{\bfseries{code}}
+
+% listings 设置
+% \lstset {
+%     numbers=left
+%     , frame=single
+%     , emph={abstract, arguments, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, eval, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in, instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, void, volatile, while, with, yield}
+%     , emphstyle={\bfseries\slshape}
+%     % , basicstyle={\small}
+%     , basicstyle={\footnotesize}
+%     , stringstyle={\ttfamily}
+%     % , stringstyle=\ttfamily
+%     % , stringstyle=\sffamily
+% }
+
+
+% \newfontfamily\Consolas{Consolas}
+\lstset{
+	numbers=left
+    , frame=tb
+	, xleftmargin=2.5em
+	, framexleftmargin=2.5em
+	, basicstyle={\footnotesize\ttfamily}
+	, numberstyle={\footnotesize\bfseries\slshape}
+	, tabsize=2
+	, morekeywords={break,case,catch,continue,default,delete,do,else,
+                    finally,for,function,if,in,instanceof,new,return,
+                    switch,this,throw,try,typeof,var,void,while,with}
+	, keywordstyle={\bfseries\slshape}
+	, belowskip={0pt}
+	, escapeinside=``
+	, extendedchars=false
+}
+
+
+
+\newcommand{\jcoderef}[1]{\lstlistingname\ref{#1}}
+\newcommand{\jcodeinline}[1]{\lstinline^#1^}
+
+
+
+
+
+% 定义页边距
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\addtolength{\textwidth}{30pt}
+
+
+% 定义案例环境
+\newcounter{jdemonum}[chapter]
+\newcommand{\jdemoname}{{\noindent\heiti\sffamily 例\,\arabic{jdemonum}\quad}}  % ctex 文档类
+\newenvironment{jdemo}{\addtocounter{jdemonum}{1}\jdemoname}{}
+
+
+% 定义列表环境
+\newcounter{exercisenum}
+% \setcounter{exercisenum}{0}
+\newenvironment{exercise}{ 
+	\begin{center}\zihao{-4}\bfseries
+	练\quad 习
+	\end{center}
+	\begin{list}{
+		\textbf{练题\arabic{exercisenum}.}
+	}{
+		\usecounter{exercisenum}
+		\setlength{\itemsep}{0pt}
+	}
+}{\end{list}}

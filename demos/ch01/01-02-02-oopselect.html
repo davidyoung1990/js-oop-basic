@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建select标签到页面</title>
+</head>
+<body>
+<div id="dv"></div>
+<script>
+    function Select( opts ) {
+        this.container = opts.container;
+        this.data = opts.data;
+        this.__dom__ = null;
+    }
+    Select.prototype = {
+        constructor: Select
+        , init: function () {
+            var select = this.__dom__ = document.createElement( 'select' );
+            this.render();
+            this.container.appendChild( select );
+        }
+        , render: function () {
+            var data = this.data;
+            var options = document.createDocumentFragment();
+            for ( var i = 0; i < data.length; i++ ) {
+                var option = document.createElement( 'option' );
+                option.value = i + 1;
+                option.appendChild( document.createTextNode( data[ i ] ) );
+                options.appendChild( option );
+            }
+            this.__dom__.appendChild( options );
+        }
+    };
+
+
+    var select = new Select({
+        container: document.getElementById( 'dv' )
+        , data: [ '北京', '上海', '广州', '深圳' ] 
+    });
+    select.init();
+
+
+</script>
+</body>
+</html>

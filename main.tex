@@ -1,0 +1,36 @@
+\documentclass[UTF8]{ctexbook}
+
+
+\input{"./preamble.tex"}
+
+\begin{document}
+\zihao{-5}
+
+
+
+% 修改页码为小写罗马字符(用于描述目录页码)
+\frontmatter
+
+% 打印标题页
+\input{"./title.tex"}
+
+% 打印目录
+\tableofcontents
+
+% 将页码切换成 阿拉伯数字, 并重新计算页码
+\mainmatter
+
+
+
+
+
+% 加载第一章 js 面向对象与面向对象编程
+\input{"./chs/01-oo-oop.tex"}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组的使用方法复习</title>
+</head>
+<body>
+<script>
+    // 定义数组
+    var arr1 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+
+    // 1, 反转数组
+    arr1.reverse();
+    console.log( arr1 ); // [ 9,8,7,6,5,4,3,2,1 ]
+
+    // 2, 提取某一个范围的字符
+    console.log( arr1.slice( 3, 6 ) ); // [ 6, 5, 4 ]
+
+
+    // 3, 判断某一元素是否在数组中
+    console.log( arr1.indexOf( 0 ) ); // -1
+    console.log( arr1.indexOf( 5 ) ); // 4
+
+    // 4, 往数组中增加元素
+    arr1.push( 'a' );    // 10
+    console.log( arr1 ); // [ 9,8,7,6,5,4,3,2,1,a ]
+    arr1.unshift( 'b' ); // 11
+    console.log( arr1 ); // [ 'b',9,8,7,6,5,4,3,2,1,'a' ]
+
+    // 5, 往数组中移除元素
+    arr1.pop(); // 10
+    arr1.shift(); // 9
+    arr1.splice( 5, 1 );
+    console.log( arr1 ); // [ 9,8,7,6,5,3,2,1 ]
+</script>
+</body>
+</html>

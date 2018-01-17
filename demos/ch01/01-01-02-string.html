@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串方法复习</title>
+</head>
+<body>
+<script>
+    // 定义字符串
+    var str = "hello JavaScript string";
+
+    // 1, 统计单词的个数
+    var wds = str.split( ' ' );
+    console.log( "有 " + wds.length + " 个单词" );
+
+    // 2, 判断是否含有某一个子字符串
+    console.log( str.indexOf( "JavaScript" ) );  // 6
+    console.log( str.indexOf( "javascript" ) );  // -1
+
+    // 3, 转大小写
+    console.log( str.toUpperCase() );
+    console.log( str.toLowerCase() );
+
+</script>
+</body>
+</html>
